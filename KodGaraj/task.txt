@@ -1,0 +1,48 @@
+Proje
+
+NodeJS ile e-ticaret sitesi için RestAPI oluşturulacak. HTTP istekler, Postman vb. programlar üzerinden sağlanabilir. İsteğe göre ön yüz oluşturulup, HTTP istekler bu ön yüz üzerinden sağlanabilir.
+
+Beklenen Senaryolar
+
+[x]Kullanıcı sisteme JWT token ile giriş yapacak. 
+[x]Kullanıcı kendi ürünleri üzerinden CRUD işlemleri yapabilecek.
+[x]Kullanıcı ürünlerine resim yüklemesi yapabilir (Opsiyonel).
+[x]Joi ile istekte gelen alanların kontrolü için kullanılması gerekmektedir.
+
+Ekstra Beklenen Senaryolar (Opsiyonel)
+
+Vue2 ve Vite kullanılarak proje oluşturulacak.
+UI kütüphanesi olarak Vuetify kullanılacak.
+İstekler axios ile atılacak.
+Sayfa yönlendirmeleri Vue Router ile yapılacak.
+State management aracı olarak Vuex kullanılacak.
+
+Endpoints
+
+[x] POST /login -> JWT ile beraber giriş yapacak
+[x] POST /categories -> Kullanıcı kategori eklemesi yapabilecek
+[x] GET /categories -> Eklediği kategorileri listeleyebilecek
+[x] GET /categories/:categoryId -> Eklediği kategoriyi idsine göre listeleyebilecek
+[x] PATCH /categories/:categoryId -> Eklediği kategoriyi idsine göre güncelleyebilecek
+[x] DELETE /categories/:categoryId -> Eklediği kategoriyi idsine göre silebilecek (Eğer bir kategori silinirse, o kategoriye ait -varsa- ürünler silinecek)
+[x] POST /products -> Bir kategoriye, yeni ürün kaydı oluşturabilecek
+[x] GET /products -> Kullanıcı eklediği ürünler listeleyebilecek
+[x] GET /products/:productId -> Kullanıcı eklediği ürünü idsine göre listeleyebilecek
+[x] PATCH /products/:productId -> Kullanıcı eklediği ürünü idsine göre güncelleyebilecek
+[x] DELETE /products/:productId -> Kullanıcı eklediği ürünü idsine göre silebilecek
+
+Kullanılması Beklenen Teknolojiler
+Backend
+NodeJS
+ExpressJS
+MongoDB
+Joi
+
+Frontend
+Vue2 (Vite)
+Vuetify
+Vue Router
+Vuex
+axios
+
+Mock veriler ve geri kalan eksik kısımları kendi fikirlerinize göre doldurup projeyi tamamlayabilirsiniz.

@@ -1,0 +1,443 @@
+{
+	"info": {
+		"_postman_id": "9902d614-7f2a-480c-adb3-77ba74c78449",
+		"name": "KodGaraj Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21757464"
+	},
+	"item": [
+		{
+			"name": "Register A New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Buğra\",\r\n    \"email\": \"bugra@bugra.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login With Email And Pass",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"bugra@bugra.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Profile Informations",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ5NDk3YWY3ZGY1ODMwODljZjJhNjAiLCJpYXQiOjE2NjU3NDczNzh9.UiMtqe1QYewswSOaMdX75mEPGG9e--kVkCWn3HUSFLA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"BuğraNohut\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/edit",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ5NDk3YWY3ZGY1ODMwODljZjJhNjAiLCJpYXQiOjE2NjU3NDczNzh9.UiMtqe1QYewswSOaMdX75mEPGG9e--kVkCWn3HUSFLA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Shirts\",\r\n    \"description\":\"Shirts\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/add_category",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"add_category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ5NDk3YWY3ZGY1ODMwODljZjJhNjAiLCJpYXQiOjE2NjU3NDczNzh9.UiMtqe1QYewswSOaMdX75mEPGG9e--kVkCWn3HUSFLA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Green TShirt",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Nice Product!",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "Shirts",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/bugra/Desktop/GreatKart Images/Products/Blue-Shirt.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/add_product",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"add_product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User's Categories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ5NDk3YWY3ZGY1ODMwODljZjJhNjAiLCJpYXQiOjE2NjU3NDczNzh9.UiMtqe1QYewswSOaMdX75mEPGG9e--kVkCWn3HUSFLA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/users/categories",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category By categoryId",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ5NDk3YWY3ZGY1ODMwODljZjJhNjAiLCJpYXQiOjE2NjU3NDczNzh9.UiMtqe1QYewswSOaMdX75mEPGG9e--kVkCWn3HUSFLA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/users/categories/63494beeaa0d63152dd6fa3f",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"categories",
+						"63494beeaa0d63152dd6fa3f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Category Properties By categoryId",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ5NDk3YWY3ZGY1ODMwODljZjJhNjAiLCJpYXQiOjE2NjU3NDczNzh9.UiMtqe1QYewswSOaMdX75mEPGG9e--kVkCWn3HUSFLA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jeans\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/categories/63494beeaa0d63152dd6fa3f",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"categories",
+						"63494beeaa0d63152dd6fa3f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Category and All Products That Assign With It",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ5NDk3YWY3ZGY1ODMwODljZjJhNjAiLCJpYXQiOjE2NjU3NDczNzh9.UiMtqe1QYewswSOaMdX75mEPGG9e--kVkCWn3HUSFLA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/users/categories/63494beeaa0d63152dd6fa3f",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"categories",
+						"63494beeaa0d63152dd6fa3f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products By UserId",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ5NDk3YWY3ZGY1ODMwODljZjJhNjAiLCJpYXQiOjE2NjU3NDczNzh9.UiMtqe1QYewswSOaMdX75mEPGG9e--kVkCWn3HUSFLA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/users/products",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product by ProductId",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ5NDk3YWY3ZGY1ODMwODljZjJhNjAiLCJpYXQiOjE2NjU3NDczNzh9.UiMtqe1QYewswSOaMdX75mEPGG9e--kVkCWn3HUSFLA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/users/products/634949fff7df583089cf2a64",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"products",
+						"634949fff7df583089cf2a64"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Product Properties By productI",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ5NDk3YWY3ZGY1ODMwODljZjJhNjAiLCJpYXQiOjE2NjU3NDczNzh9.UiMtqe1QYewswSOaMdX75mEPGG9e--kVkCWn3HUSFLA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Sarı Tshirt\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/products/634949fff7df583089cf2a64",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"products",
+						"634949fff7df583089cf2a64"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete A Product by productId",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ5NDk3YWY3ZGY1ODMwODljZjJhNjAiLCJpYXQiOjE2NjU3NDczNzh9.UiMtqe1QYewswSOaMdX75mEPGG9e--kVkCWn3HUSFLA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/users/products/634949fff7df583089cf2a64",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"products",
+						"634949fff7df583089cf2a64"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
