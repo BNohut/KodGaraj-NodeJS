@@ -17,29 +17,21 @@ import axios from 'axios'
             }
         },
         methods:{
-            submit(){
+            async submit(){
                 let data = JSON.stringify({
                     "name": this.name,
                     "email": this.email,
                     "password": this.password
                 });
 
-                let config = {
-                method: 'post',
-                url: 'http://localhost:3000/api/auth/register',
-                headers: { 
-                    'Content-Type': 'application/json'
-                },
-                data : data
-                };
-
-                axios(config)
-                .then(function (response) {
+                await axios("auth/register", data)
+                .then((response) => {
                 console.log(JSON.stringify(response.data));
                 })
-                .catch(function (error) {
+                .catch((error) =>{
                 console.log(error);
                 });
+                this.$router.push('/')
             }
         }
     }
